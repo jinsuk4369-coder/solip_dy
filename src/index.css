@@ -1,15 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600&family=Gowun+Dodum&family=Nanum+Pen+Script&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-cursive: "Dancing Script", cursive;
-  --font-sans: "Inter", "Noto Sans KR", "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
+  --font-letter: "Nanum Pen Script", "Dancing Script", cursive;
+  --font-sans: "Gowun Dodum", "Inter", "Noto Sans KR", "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
 
   --color-pastel-pink: #fce4ec;
   --color-pastel-blue: #e3f2fd;
   --color-pastel-purple: #f3e5f5;
   --color-pastel-green: #e8f5e9;
   --color-pastel-yellow: #fff9c4;
+}
+
+@utility text-engraved {
+  text-shadow: 1px 1px 0px rgba(255,255,255,0.8), -1px -1px 0px rgba(0,0,0,0.1);
 }
 
 @layer base {

@@ -17,6 +17,7 @@ import {
   ChevronRight,
   Languages,
   Palette,
+  Brush,
   Info,
   Youtube,
   Gamepad2,
@@ -38,6 +39,7 @@ interface Content {
   quote: string;
   aboutMe: {
     title: string;
+    personalityIdentityTitle: string;
     languages: {
       label: string;
       items: string[];
@@ -63,6 +65,7 @@ interface Content {
     };
     genres: {
       label: string;
+      subtitle: string;
       items: string[];
       details: string[];
     };
@@ -95,6 +98,7 @@ const translations: Record<Language, Content> = {
     quote: "I want to see the world through art.",
     aboutMe: {
       title: "ABOUT ME",
+      personalityIdentityTitle: "성격 & 정체성",
       languages: {
         label: "언어",
         items: [
@@ -117,19 +121,19 @@ const translations: Record<Language, Content> = {
         label: "성적 지향성과 정체성",
         tags: ["논바이너리 Non-binary", "팬로맨틱 Panromantic", "에이섹슈얼 Asexual"],
         descriptions: {
-          panromantic: "팬로맨틱 (Panromantic): '범성'에 해당하는 부분입니다. 상대방의 성별이나 젠더 정체성과 관계없이, 사람 그 자체에게 정서적이고 로맨틱한 끌림을 느끼는 지향성을 뜻 해요.",
-          asexual: "에이섹슈얼 (Asexual): '무성애'에 해당하는 부분으로, 타인에게 성적 끌림을 느끼지 않는 지향성 이예요",
-          nonbinary: "논바이너리 (Non-binary): 스스로의 젠더 정체성이 남성이나 여성이라는 이분법에 속하지 않는다고 느끼는 것을 말해요."
+          nonbinary: "논바이너리 (Non-binary): 스스로의 젠더 정체성이 남성이나 여성이라는 이분법에 속하지 않는다고 느끼는 것을 말해요.",
+          panromantic: "팬로맨틱 (Panromantic): '범성'에 해당하는 부분으로, 상대방의 성별이나 젠더 정체성과 관계없이, 사람 그 자체에게 정서적이고 로맨틱한 끌림을 느끼는 지향성을 뜻 해요.",
+          asexual: "에이섹슈얼 (Asexual): '무성애'에 해당하는 부분으로, 타인에게 성적 끌림을 느끼지 않는 지향성 이예요"
         }
       },
       genres: {
         label: "좋아하는 장르",
+        subtitle: "모든 장르 및 All종족",
         items: ["My OC", "판타지"],
         details: [
           "HL & BL & GL & 논커플링",
           "애니메이션 & 웹툰 & 소설 & 게임 & 노래",
-          "인간 & 인외 & 크리쳐 & 오브젝트 & 스틱맨",
-          "모든 장르 및 All종족"
+          "인간 & 인외 & 크리쳐 & 오브젝트 & 스틱맨"
         ]
       },
       likes: {
@@ -163,6 +167,7 @@ const translations: Record<Language, Content> = {
     quote: "I want to see the world through art.",
     aboutMe: {
       title: "ABOUT ME",
+      personalityIdentityTitle: "Personality & Identity",
       languages: {
         label: "Languages",
         items: [
@@ -192,12 +197,12 @@ const translations: Record<Language, Content> = {
       },
       genres: {
         label: "Favorite Genres",
+        subtitle: "All Genres & All Races",
         items: ["My OC", "Fantasy"],
         details: [
           "HL & BL & GL & Non-coupling",
           "Animation & Webtoon & Novel & Game & Song",
-          "Human & Non-human & Creature & Object & Stickman",
-          "All Genres & All Races"
+          "Human & Non-human & Creature & Object & Stickman"
         ]
       },
       likes: {
@@ -231,6 +236,7 @@ const translations: Record<Language, Content> = {
     quote: "I want to see the world through art.",
     aboutMe: {
       title: "ABOUT ME",
+      personalityIdentityTitle: "性格 & アイデンティティ",
       languages: {
         label: "言語",
         items: [
@@ -253,19 +259,19 @@ const translations: Record<Language, Content> = {
         label: "性的指向とアイデンティティ",
         tags: ["ノンバイナリー Non-binary", "パンロマンティック Panromantic", "アセクシュアル Asexual"],
         descriptions: {
-          panromantic: "パンロマンティック (Panromantic): 相手の性별やジェンダーアイデンティティに関係なく、人そのものに情緒的・ロマンティックな惹きつけを感じる指向を意味します。",
+          panromantic: "パンロマンティック (Panromantic): 相手の性別やジェンダーアイデンティティに関係なく、人そのものに情緒的・ロマンティックな惹きつけを感じる指向を意味します。",
           asexual: "アセクシュアル (Asexual): 他人に対して性的惹きつけを感じない指向です。",
           nonbinary: "ノンバイナリー (Non-binary): 自身のジェンダーアイデンティティが男性か女性かという二分法に属さないと感じることを言います。"
         }
       },
       genres: {
         label: "好きなジャンル",
+        subtitle: "全ジャンル & 全種族",
         items: ["My OC", "ファンタジー"],
         details: [
           "HL & BL & GL & ノンカップリング",
           "アニメ & ウェブトゥーン & 小説 & ゲーム & 歌",
-          "人間 & 人外 & クリーチャー & オブジェクト & スティックマン",
-          "全ジャンル & 全種族"
+          "人間 & 人外 & クリーチャー & オブジェクト & スティックマン"
         ]
       },
       likes: {
@@ -282,7 +288,7 @@ const translations: Record<Language, Content> = {
       },
       birthday: {
         label: "誕生日",
-        text: "9월 24일"
+        text: "9月24日"
       },
       copyright: {
         label: "著作権",
@@ -339,10 +345,20 @@ const App: React.FC = () => {
             <div className="relative w-48 h-48 sm:w-64 sm:h-64 mb-4">
               <div className="absolute inset-0 bg-pastel-purple/20 rounded-full blur-3xl animate-pulse" />
               <img 
-                src="https://raw.githubusercontent.com/StackBlitz-Master/image-repo/main/cat_illustration.png" 
+                src="/cat_illustration.webp" 
                 alt="Solip dy Mascot"
                 className="w-full h-full object-contain relative z-10 drop-shadow-2xl"
                 referrerPolicy="no-referrer"
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  if (target.src.endsWith('.webp')) {
+                    target.src = "/cat_illustration.gif";
+                  } else if (target.src.endsWith('.gif')) {
+                    target.src = "/cat_illustration.png";
+                  } else if (target.src.endsWith('.png')) {
+                    target.src = "https://picsum.photos/seed/cat/400/400";
+                  }
+                }}
               />
             </div>
             <div className="space-y-2">
@@ -374,7 +390,7 @@ const App: React.FC = () => {
           </motion.div>
         </section>
 
-        {/* About Me Section */}
+        {/* About Me Section - Part 1: ABOUT ME */}
         <motion.section
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -385,163 +401,208 @@ const App: React.FC = () => {
             <div className="p-3 bg-pastel-purple/30 rounded-2xl text-slate-700">
               <User size={24} />
             </div>
-            <h2 className="text-3xl font-bold tracking-tighter text-slate-800">{content.aboutMe.title}</h2>
+            <h2 className="text-4xl font-bold tracking-tighter text-slate-800 text-engraved font-letter">{content.aboutMe.title}</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            {/* Left Column */}
-            <div className="space-y-8">
-              <div className="space-y-3">
-                <h3 className="text-sm font-bold text-slate-400 tracking-widest uppercase flex items-center gap-2">
-                  <Globe size={14} /> {content.aboutMe.languages.label}
-                </h3>
-                <ul className="space-y-2">
-                  {content.aboutMe.languages.items.map((item, i) => (
-                    <li key={i} className="text-slate-700 flex items-start gap-2">
-                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-pastel-purple shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="space-y-3">
-                <h3 className="text-sm font-bold text-slate-400 tracking-widest uppercase flex items-center gap-2">
-                  <Heart size={14} /> {content.aboutMe.dream.label}
-                </h3>
-                <p className="text-slate-700 leading-relaxed">
-                  {content.aboutMe.dream.text}
-                </p>
-              </div>
-
-              <div className="space-y-3">
-                <h3 className="text-sm font-bold text-slate-400 tracking-widest uppercase flex items-center gap-2">
-                  <Cake size={14} /> {content.aboutMe.birthday.label}
-                </h3>
-                <p className="text-slate-700 leading-relaxed font-medium">
-                  {content.aboutMe.birthday.text}
-                </p>
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Languages Card */}
+            <div className="bg-white/40 p-6 rounded-3xl border border-white/20 space-y-4">
+              <h3 className="text-xl font-bold text-slate-400 tracking-widest uppercase flex items-center gap-2 text-engraved font-letter">
+                <Globe size={16} className="text-pastel-blue" /> {content.aboutMe.languages.label}
+              </h3>
+              <ul className="space-y-2">
+                {content.aboutMe.languages.items.map((item, i) => (
+                  <li key={i} className="text-slate-700 text-sm flex items-start gap-2">
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-pastel-blue shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            {/* Right Column */}
-            <div className="space-y-8">
-              <div className="space-y-3">
-                <h3 className="text-sm font-bold text-slate-400 tracking-widest uppercase flex items-center gap-2">
-                  <Palette size={14} /> {content.aboutMe.personality.label}
-                </h3>
-                <div className="space-y-2 text-slate-700">
-                  <p className="bg-pastel-blue/30 px-3 py-1 rounded-lg inline-block mr-2">{content.aboutMe.personality.mbti}</p>
-                  <p className="bg-pastel-pink/30 px-3 py-1 rounded-lg inline-block">{content.aboutMe.personality.enneagram}</p>
-                  <p className="mt-2 text-slate-600 font-medium italic">{content.aboutMe.personality.eq}</p>
-                </div>
-              </div>
+            {/* Dream Card */}
+            <div className="bg-white/40 p-6 rounded-3xl border border-white/20 space-y-4">
+              <h3 className="text-xl font-bold text-slate-400 tracking-widest uppercase flex items-center gap-2 text-engraved font-letter">
+                <Heart size={16} className="text-pastel-pink" /> {content.aboutMe.dream.label}
+              </h3>
+              <p className="text-slate-700 text-sm leading-relaxed">{content.aboutMe.dream.text}</p>
+            </div>
 
+            {/* Birthday Card */}
+            <div className="bg-white/40 p-6 rounded-3xl border border-white/20 space-y-4">
+              <h3 className="text-xl font-bold text-slate-400 tracking-widest uppercase flex items-center gap-2 text-engraved font-letter">
+                <Cake size={16} className="text-pastel-pink" /> {content.aboutMe.birthday.label}
+              </h3>
+              <p className="text-slate-700 font-medium">{content.aboutMe.birthday.text}</p>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* About Me Section - Part 2: Personality & Identity */}
+        <motion.section
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className="glass rounded-dreamy p-8 sm:p-12 space-y-10"
+        >
+          <div className="flex items-center gap-4">
+            <div className="p-3 bg-pastel-blue/30 rounded-2xl text-slate-700">
+              <Palette size={24} />
+            </div>
+            <h2 className="text-4xl font-bold tracking-tighter text-slate-800 text-engraved font-letter">{content.aboutMe.personalityIdentityTitle}</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Personality Card */}
+            <div className="bg-white/40 p-6 rounded-3xl border border-white/20 space-y-4">
+              <h3 className="text-xl font-bold text-slate-400 tracking-widest uppercase flex items-center gap-2 text-engraved font-letter">
+                <Brush size={16} className="text-pastel-purple" /> {content.aboutMe.personality.label}
+              </h3>
               <div className="space-y-3">
-                <h3 className="text-sm font-bold text-slate-400 tracking-widest uppercase flex items-center gap-2">
-                  <Info size={14} /> {content.aboutMe.identity.label}
-                </h3>
                 <div className="flex flex-wrap gap-2">
-                  {content.aboutMe.identity.tags.map((tag, i) => (
-                    <span key={i} className="text-xs font-medium bg-white/60 border border-slate-100 px-3 py-1.5 rounded-full text-slate-600">
-                      {tag}
-                    </span>
+                  <span className="bg-pastel-blue/30 px-3 py-1 rounded-lg text-sm text-slate-700">{content.aboutMe.personality.mbti}</span>
+                  <span className="bg-pastel-pink/30 px-3 py-1 rounded-lg text-sm text-slate-700">{content.aboutMe.personality.enneagram}</span>
+                </div>
+                <p className="text-slate-600 font-medium italic text-sm">{content.aboutMe.personality.eq}</p>
+              </div>
+            </div>
+
+            {/* Identity Card */}
+            <div className="bg-white/40 p-6 rounded-3xl border border-white/20 space-y-4 lg:col-span-2">
+              <h3 className="text-xl font-bold text-slate-400 tracking-widest uppercase flex items-center gap-2 text-engraved font-letter">
+                <Info size={16} className="text-pastel-purple" /> {content.aboutMe.identity.label}
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {content.aboutMe.identity.tags.map((tag, i) => (
+                  <span key={i} className="text-xs font-medium bg-white/60 border border-slate-100 px-3 py-1.5 rounded-full text-slate-600">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <button 
+                onClick={() => setShowIdentityInfo(!showIdentityInfo)}
+                className="text-xs font-bold text-pastel-purple hover:text-slate-800 transition-colors flex items-center gap-1 group"
+              >
+                {lang === 'KR' ? '자세히 보기' : lang === 'EN' ? 'Learn more' : '詳細を見る'}
+                <ChevronRight size={14} className={`transition-transform duration-300 ${showIdentityInfo ? 'rotate-90' : ''}`} />
+              </button>
+              
+              <AnimatePresence>
+                {showIdentityInfo && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    className="overflow-hidden"
+                  >
+                    <div className="bg-white/60 rounded-2xl p-4 mt-2 space-y-3 text-xs text-slate-600 leading-relaxed border border-white/20">
+                      <p>{content.aboutMe.identity.descriptions.nonbinary}</p>
+                      <p>{content.aboutMe.identity.descriptions.panromantic}</p>
+                      <p>{content.aboutMe.identity.descriptions.asexual}</p>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* About Me Section - Part 3: Genres & Preferences */}
+        <motion.section
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className="glass rounded-dreamy p-8 sm:p-12 space-y-10"
+        >
+          <div className="flex items-center gap-4">
+            <div className="p-3 bg-pastel-purple/30 rounded-2xl text-slate-700">
+              <BookOpen size={24} />
+            </div>
+            <h2 className="text-4xl font-bold tracking-tighter text-slate-800 text-engraved font-letter">{content.aboutMe.genres.label}</h2>
+          </div>
+
+          <div className="space-y-6">
+            {/* Genres Section */}
+            <div className="bg-white/40 p-8 rounded-3xl border border-white/20 space-y-8">
+              <div className="text-center space-y-2">
+                <p 
+                  className="text-xs font-bold text-purple-900/40 tracking-tight italic"
+                  style={{ textShadow: '1px 1px 0px rgba(255,255,255,0.8), -1px -1px 0px rgba(0,0,0,0.05)' }}
+                >
+                  {content.aboutMe.genres.subtitle}
+                </p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="flex flex-wrap justify-center md:justify-end gap-3 content-center">
+                  {content.aboutMe.genres.items.map((item, i) => (
+                    <div key={i} className="px-6 py-2 bg-white rounded-full border border-pastel-purple/20 shadow-sm">
+                      <span className="text-slate-700 font-bold text-sm">{item}</span>
+                    </div>
                   ))}
                 </div>
-                <button 
-                  onClick={() => setShowIdentityInfo(!showIdentityInfo)}
-                  className="text-xs font-bold text-pastel-purple hover:text-slate-800 transition-colors flex items-center gap-1 group"
-                >
-                  {lang === 'KR' ? '자세히 보기' : lang === 'EN' ? 'Learn more' : '詳細を見る'}
-                  <ChevronRight size={14} className={`transition-transform duration-300 ${showIdentityInfo ? 'rotate-90' : ''}`} />
-                </button>
-                
-                <AnimatePresence>
-                  {showIdentityInfo && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: 'auto' }}
-                      exit={{ opacity: 0, height: 0 }}
-                      className="overflow-hidden"
-                    >
-                      <div className="bg-white/40 rounded-2xl p-4 mt-2 space-y-3 text-xs text-slate-600 leading-relaxed border border-white/20">
-                        <p>{content.aboutMe.identity.descriptions.panromantic}</p>
-                        <p>{content.aboutMe.identity.descriptions.asexual}</p>
-                        <p>{content.aboutMe.identity.descriptions.nonbinary}</p>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                <div className="space-y-2 text-center md:text-left border-l-0 md:border-l border-slate-100 md:pl-8">
+                  {content.aboutMe.genres.details.map((detail, i) => (
+                    <p key={i} className="text-xs text-slate-500 font-medium">
+                      {detail}
+                    </p>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* New Sections: Likes, Dislikes, Triggers */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8 border-t border-slate-100">
-            <div className="space-y-3">
-              <h3 className="text-sm font-bold text-slate-400 tracking-widest uppercase flex items-center gap-2">
-                <ThumbsUp size={14} className="text-emerald-400" /> {content.aboutMe.likes.label}
-              </h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                {content.aboutMe.likes.text}
-              </p>
-            </div>
-            <div className="space-y-3">
-              <h3 className="text-sm font-bold text-slate-400 tracking-widest uppercase flex items-center gap-2">
-                <ThumbsDown size={14} className="text-rose-400" /> {content.aboutMe.dislikes.label}
-              </h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                {content.aboutMe.dislikes.text}
-              </p>
-            </div>
-            <div className="space-y-3">
-              <h3 className="text-sm font-bold text-slate-400 tracking-widest uppercase flex items-center gap-2">
-                <Ban size={14} className="text-slate-400" /> {content.aboutMe.triggers.label}
-              </h3>
-              <p className="text-xs text-slate-600 leading-relaxed italic">
-                {content.aboutMe.triggers.text}
-              </p>
-            </div>
-          </div>
-
-          {/* Genres */}
-          <div className="pt-8 border-t border-slate-100">
-            <div className="space-y-6">
-              <h3 className="text-sm font-bold text-slate-400 tracking-widest uppercase text-center flex items-center justify-center gap-2">
-                <Palette size={14} /> {content.aboutMe.genres.label}
-              </h3>
-              <div className="flex flex-wrap justify-center gap-3">
-                {content.aboutMe.genres.items.map((item, i) => (
-                  <div key={i} className="px-6 py-2 bg-white rounded-full border border-pastel-purple/20 shadow-sm">
-                    <span className="text-slate-700 font-bold text-sm">{item}</span>
-                  </div>
-                ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Likes Card */}
+              <div className="bg-emerald-50/30 p-6 rounded-3xl border border-emerald-100/50 space-y-3">
+                <h3 className="text-xl font-bold text-emerald-600/60 tracking-widest uppercase flex items-center gap-2 text-engraved font-letter">
+                  <ThumbsUp size={16} /> {content.aboutMe.likes.label}
+                </h3>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  {content.aboutMe.likes.text}
+                </p>
               </div>
-              <div className="space-y-2 text-center">
-                {content.aboutMe.genres.details.map((detail, i) => (
-                  <p key={i} className="text-xs text-slate-500 font-medium">
-                    {detail}
-                  </p>
-                ))}
+
+              {/* Dislikes Card */}
+              <div className="bg-rose-50/30 p-6 rounded-3xl border border-rose-100/50 space-y-3">
+                <h3 className="text-xl font-bold text-rose-600/60 tracking-widest uppercase flex items-center gap-2 text-engraved font-letter">
+                  <ThumbsDown size={16} /> {content.aboutMe.dislikes.label}
+                </h3>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  {content.aboutMe.dislikes.text}
+                </p>
+              </div>
+
+              {/* Triggers Card */}
+              <div className="bg-slate-50/50 p-6 rounded-3xl border border-slate-200/50 space-y-3">
+                <h3 className="text-xl font-bold text-slate-400 tracking-widest uppercase flex items-center gap-2 text-engraved font-letter">
+                  <Ban size={16} /> {content.aboutMe.triggers.label}
+                </h3>
+                <p className="text-xs text-slate-600 leading-relaxed italic">
+                  {content.aboutMe.triggers.text}
+                </p>
               </div>
             </div>
           </div>
         </motion.section>
 
-        {/* Copyright Section */}
+        {/* About Me Section - Part 4: Copyright */}
         <motion.section
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="glass rounded-dreamy p-8 text-center space-y-4"
+          className="glass rounded-dreamy p-8 sm:p-12 space-y-10"
         >
-          <h2 className="text-xl font-bold text-slate-800 flex items-center justify-center gap-2">
-            <Ghost size={20} className="text-pastel-purple" />
-            {content.aboutMe.copyright.label}
-          </h2>
-          <ul className="space-y-2 text-sm text-slate-600">
+          <div className="flex items-center gap-4">
+            <div className="p-3 bg-pastel-purple/30 rounded-2xl text-slate-700">
+              <Ghost size={24} />
+            </div>
+            <h2 className="text-4xl font-bold tracking-tighter text-slate-800 text-engraved font-letter">{content.aboutMe.copyright.label}</h2>
+          </div>
+          <ul className="space-y-4 text-slate-600">
             {content.aboutMe.copyright.items.map((item, i) => (
-              <li key={i}>{item}</li>
+              <li key={i} className="flex items-start gap-3">
+                <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-pastel-purple shrink-0" />
+                {item}
+              </li>
             ))}
           </ul>
         </motion.section>
