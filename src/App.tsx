@@ -38,6 +38,7 @@ import {
   Scale,
   Flower2,
   Music,
+  Key,
   Play,
   SkipBack,
   SkipForward,
@@ -1132,9 +1133,12 @@ const App: React.FC = () => {
       </main>
 
       <footer className="mt-24 text-center space-y-4">
-        <p className="font-cursive text-2xl text-slate-600 drop-shadow-md">
-          Thanks for visiting my world.
-        </p>
+        <div className="flex flex-col items-center gap-2">
+          <Key size={16} className="text-slate-400 opacity-70" />
+          <p className="font-cursive text-2xl text-slate-600 drop-shadow-md">
+            Thanks for visiting my world.
+          </p>
+        </div>
         <p className="text-sm text-slate-400 font-light tracking-widest">
           © 2026 by Solip dy. All rights reserved.
         </p>
