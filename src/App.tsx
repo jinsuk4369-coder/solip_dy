@@ -157,7 +157,7 @@ const translations: Record<Language, Content> = {
         items: [
           "제가 그린 그림 등의 저작권은 모두 제게 있습니다.",
           "트레, 도용, 배포, AI, 상업적 이용이 불가합니다.",
-          "리퀘스트 하실 때 참고 바랍니다."
+          "art사용,커미션,리퀘스트 하실 때 참고 바랍니다."
         ]
       }
     }
@@ -226,7 +226,7 @@ const translations: Record<Language, Content> = {
         items: [
           "All rights to the artworks I draw belong to me.",
           "Tracing, theft, distribution, AI use, and commercial use are prohibited.",
-          "Please keep this in mind when making requests."
+          "Please keep this in mind for art usage, commissions, and requests."
         ]
       }
     }
@@ -295,7 +295,7 @@ const translations: Record<Language, Content> = {
         items: [
           "私が描いた絵などの著作権はすべて私にあります。",
           "トレース、盗用、配布、AI、商業的利用は禁止されています。",
-          "リクエストの際は参考にしてください。"
+          "artの使用、コミッション、リクエストの際は参考にしてください。"
         ]
       }
     }
