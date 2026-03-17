@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e1f5fe" />
+      <stop offset="100%" stop-color="#b3e5fc" />
+    </radialGradient>
+  </defs>
+  <circle cx="200" cy="200" r="190" fill="url(#bg)"/>
+  <!-- Body -->
+  <path d="M 100 350 C 100 180, 300 180, 300 350 Z" fill="#e0f7fa" stroke="#4fc3f7" stroke-width="4"/>
+  <!-- Ears -->
+  <path d="M 110 200 L 90 90 L 180 160 Z" fill="#e0f7fa" stroke="#4fc3f7" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M 120 180 L 105 110 L 165 160 Z" fill="#b2ebf2"/>
+  <path d="M 290 200 L 310 90 L 220 160 Z" fill="#e0f7fa" stroke="#4fc3f7" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M 280 180 L 295 110 L 235 160 Z" fill="#b2ebf2"/>
+  <!-- Eyes -->
+  <circle cx="150" cy="230" r="18" fill="#37474f"/>
+  <circle cx="155" cy="225" r="6" fill="#ffffff"/>
+  <circle cx="145" cy="235" r="3" fill="#ffffff"/>
+  <circle cx="250" cy="230" r="18" fill="#37474f"/>
+  <circle cx="255" cy="225" r="6" fill="#ffffff"/>
+  <circle cx="245" cy="235" r="3" fill="#ffffff"/>
+  <!-- Blushes -->
+  <ellipse cx="120" cy="250" rx="15" ry="8" fill="#ff8a80" opacity="0.5"/>
+  <ellipse cx="280" cy="250" rx="15" ry="8" fill="#ff8a80" opacity="0.5"/>
+  <!-- Nose -->
+  <path d="M 190 250 Q 200 260 210 250 Z" fill="#ff8a80"/>
+  <!-- Mouth -->
+  <path d="M 185 265 Q 200 280 200 265 Q 200 280 215 265" fill="none" stroke="#37474f" stroke-width="3" stroke-linecap="round"/>
+  <!-- Whiskers -->
+  <path d="M 130 250 Q 90 240 70 235 M 130 260 Q 90 260 70 260 M 130 270 Q 90 280 70 285" fill="none" stroke="#81d4fa" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 270 250 Q 310 240 330 235 M 270 260 Q 310 260 330 260 M 270 270 Q 310 280 330 285" fill="none" stroke="#81d4fa" stroke-width="3" stroke-linecap="round"/>
+</svg>

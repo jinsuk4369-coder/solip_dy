@@ -550,7 +550,7 @@ const App: React.FC = () => {
             <div className="relative w-48 h-48 sm:w-64 sm:h-64 mb-4">
               <div className="absolute inset-0 bg-pastel-purple/20 rounded-full blur-3xl animate-pulse" />
               <img 
-                src="/<img src="https://drive.google.com/uc?export=view&id=1ODs0AacV01CATtuObJKx_f5WAnFiYD4k" alt="Solipdy 상단 이미지">" 
+                src="/hero_cat.svg" 
                 alt="Solip dy Mascot"
                 className="w-full h-full object-contain relative z-10 drop-shadow-2xl"
                 referrerPolicy="no-referrer"
@@ -602,7 +602,7 @@ const App: React.FC = () => {
                 <div className="hidden">
                   <Player
                     ref={playerRef}
-                    url="https://www.youtube.com/watch?v=ZBIg90S5vaI"
+                    url="https://drive.google.com/uc?export=download&id=1LVZgndas9fMx0gIZml4Do2ofMmoHdfQB"
                     playing={isPlaying}
                     onProgress={(state: any) => handleProgress(state)}
                     onDuration={handleDuration}
@@ -704,7 +704,7 @@ const App: React.FC = () => {
                 {/* YouTube Link */}
                 <div className="text-center">
                   <a 
-                    href="https://youtu.be/ZBIg90S5vaI?si=6jtl_Y7HdAaWWSOZ" 
+                    href="https://www.youtube.com/watch?v=ZBIg90S5vaI" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-2.5 bg-white/60 hover:bg-white/80 border border-white/40 rounded-full text-slate-700 font-bold text-xs transition-all shadow-sm group"
@@ -989,7 +989,7 @@ const App: React.FC = () => {
             <div className="flex flex-col md:flex-row gap-8 items-center">
               <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-md relative">
                 <img 
-                  src="https://drive.google.com/uc?export=view&id=1KaqPEAMrZzq-KaoRAfIa4hwgFe_zAf16" alt="솔냥이 마스코트 이미지">
+                  src="/mascot_cat.svg" 
                   alt="Mascot" 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
