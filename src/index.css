@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-cursive: "Dancing Script", cursive;
+  --font-sans: "Inter", "Noto Sans KR", "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
+
+  --color-pastel-pink: #fce4ec;
+  --color-pastel-blue: #e3f2fd;
+  --color-pastel-purple: #f3e5f5;
+  --color-pastel-green: #e8f5e9;
+  --color-pastel-yellow: #fff9c4;
+}
+
+@layer base {
+  body {
+    @apply bg-[#fafafa] text-slate-800 antialiased;
+    background-image: radial-gradient(circle at 10% 20%, rgba(243, 229, 245, 0.4) 0%, transparent 40%),
+                      radial-gradient(circle at 90% 80%, rgba(227, 242, 253, 0.4) 0%, transparent 40%),
+                      radial-gradient(circle at 50% 50%, rgba(252, 228, 236, 0.3) 0%, transparent 50%);
+    background-attachment: fixed;
+  }
+}
+
+.glass {
+  @apply bg-white/40 backdrop-blur-md border border-white/20 shadow-lg;
+}
+
+.rounded-dreamy {
+  border-radius: 2.5rem;
+}
+
+/* Custom scrollbar for dreamy feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-pastel-purple/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-pastel-purple;
+}
