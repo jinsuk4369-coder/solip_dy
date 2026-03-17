@@ -496,13 +496,9 @@ const App: React.FC = () => {
 
   const togglePlay = () => setIsPlaying(!isPlaying);
 
-  const handleProgress = (state: { played: number; playedSeconds: number }) => {
-    setPlayed(state.played);
-    setCurrentTime(state.playedSeconds);
-  };
-
-  const handleDuration = (duration: number) => {
-    setDuration(duration);
+  const handleProgress = (state: any) => {
+    if (state.played !== undefined) setPlayed(state.played);
+    if (state.playedSeconds !== undefined) setCurrentTime(state.playedSeconds);
   };
 
   const formatTime = (seconds: number) => {
@@ -550,7 +546,7 @@ const App: React.FC = () => {
             <div className="relative w-48 h-48 sm:w-64 sm:h-64 mb-4">
               <div className="absolute inset-0 bg-pastel-purple/20 rounded-full blur-3xl animate-pulse" />
               <img 
-                src="/hero_cat.svg" 
+                src="https://drive.google.com/uc?export=view&id=1ODs0AacV01CATtuObJKx_f5WAnFiYD4k" 
                 alt="Solip dy Mascot"
                 className="w-full h-full object-contain relative z-10 drop-shadow-2xl"
                 referrerPolicy="no-referrer"
@@ -602,10 +598,18 @@ const App: React.FC = () => {
                 <div className="hidden">
                   <Player
                     ref={playerRef}
-                    url="https://drive.google.com/uc?export=download&id=1LVZgndas9fMx0gIZml4Do2ofMmoHdfQB"
+                    url="https://drive.google.com/uc?export=download&id=1KAdIFaS3ORuURp0vr1tszZc6Zf23YlD-"
                     playing={isPlaying}
                     onProgress={(state: any) => handleProgress(state)}
-                    onDuration={handleDuration}
+                    onReady={(player: any) => setDuration(player.getDuration())}
+                    config={{
+                      file: {
+                        forceAudio: true,
+                        attributes: {
+                          controlsList: 'nodownload'
+                        }
+                      }
+                    }}
                   />
                 </div>
 
@@ -989,7 +993,7 @@ const App: React.FC = () => {
             <div className="flex flex-col md:flex-row gap-8 items-center">
               <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-md relative">
                 <img 
-                  src="/mascot_cat.svg" 
+                  src="https://drive.google.com/uc?export=view&id=1KaqPEAMrZzq-KaoRAfIa4hwgFe_zAf16" 
                   alt="Mascot" 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
@@ -1128,10 +1132,20 @@ const App: React.FC = () => {
       </main>
 
       <footer className="mt-24 text-center space-y-4">
-        <p className="text-sm text-slate-400 font-light tracking-widest">
-          © 2024 Solip dy. All rights reserved.
+        <p className="font-cursive text-2xl text-slate-600 drop-shadow-md">
+          Thanks for visiting my world.
         </p>
-        <div className="flex justify-center gap-2">
+        <p className="text-sm text-slate-400 font-light tracking-widest">
+          © 2026 by Solip dy. All rights reserved.
+        </p>
+        <div className="w-16 h-px bg-slate-300 mx-auto my-4" />
+        <p className="text-xs text-slate-400 font-light tracking-widest opacity-60">
+          Published: 2021. 01. 17
+        </p>
+        <p className="text-xs text-slate-400 font-light tracking-widest opacity-60">
+          Last Updated: 2026. 03. 17
+        </p>
+        <div className="flex justify-center gap-2 mt-4">
           <div className="w-2 h-2 rounded-full bg-pastel-pink" />
           <div className="w-2 h-2 rounded-full bg-pastel-blue" />
           <div className="w-2 h-2 rounded-full bg-pastel-purple" />

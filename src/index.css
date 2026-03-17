@@ -14,7 +14,7 @@
 }
 
 @utility text-engraved {
-  text-shadow: 1px 1px 0px rgba(255,255,255,0.8), -1px -1px 0px rgba(0,0,0,0.1);
+  text-shadow: 1px 1px 0px rgba(255,255,255,0.9), -1px -1px 0px rgba(0,0,0,0.25);
 }
 
 @layer base {
