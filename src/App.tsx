@@ -550,7 +550,7 @@ const App: React.FC = () => {
             <div className="relative w-48 h-48 sm:w-64 sm:h-64 mb-4">
               <div className="absolute inset-0 bg-pastel-purple/20 rounded-full blur-3xl animate-pulse" />
               <img 
-                src="/cat_illustration.png" 
+                src="/<img src="https://drive.google.com/uc?export=view&id=1ODs0AacV01CATtuObJKx_f5WAnFiYD4k" alt="Solipdy 상단 이미지">" 
                 alt="Solip dy Mascot"
                 className="w-full h-full object-contain relative z-10 drop-shadow-2xl"
                 referrerPolicy="no-referrer"
@@ -989,7 +989,7 @@ const App: React.FC = () => {
             <div className="flex flex-col md:flex-row gap-8 items-center">
               <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-md relative">
                 <img 
-                  src="/3d_cat.png" 
+                  src="https://drive.google.com/uc?export=view&id=1KaqPEAMrZzq-KaoRAfIa4hwgFe_zAf16" alt="솔냥이 마스코트 이미지">
                   alt="Mascot" 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
