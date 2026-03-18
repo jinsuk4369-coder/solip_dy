@@ -9,7 +9,6 @@ import ReactPlayer from 'react-player';
 
 const Player = ReactPlayer as any;
 
-import { PersonalityAccordion } from './components/PersonalityAccordion';
 import { 
   Globe, 
   Heart, 
@@ -44,7 +43,13 @@ import {
   SkipBack,
   SkipForward,
   Repeat,
-  Cat
+  Cat,
+  Flame,
+  Star,
+  Puzzle,
+  Telescope,
+  Anchor,
+  Waves
 } from 'lucide-react';
 
 type Language = 'KR' | 'EN' | 'JP';
@@ -55,6 +60,18 @@ interface Content {
   aboutMe: {
     title: string;
     personalityIdentityTitle: string;
+    personalityIdentitySubtitle: string;
+    archive: {
+      insightful: {
+        title: string;
+        quote: string;
+        tags: string;
+      };
+      talent: {
+        title: string;
+        tags: string;
+      };
+    };
     languages: {
       label: string;
       items: string[];
@@ -73,12 +90,16 @@ interface Content {
       enneagram: string;
       subtype: string;
       zodiac: string;
+      oe: string;
+      scid: string;
       eq: string;
       details: {
         mbti: { title: string; content: string };
         enneagram: { title: string; content: string };
         subtype: { title: string; content: string };
         zodiac: { title: string; content: string };
+        oe: { title: string; content: string };
+        scid: { title: string; content: string };
         eq: { title: string; content: string };
       };
     };
@@ -162,6 +183,18 @@ const translations: Record<Language, Content> = {
     aboutMe: {
       title: "ABOUT ME",
       personalityIdentityTitle: "성격 & 정체성",
+      personalityIdentitySubtitle: "침묵의 아카이브",
+      archive: {
+        insightful: {
+          title: "고요한 통찰자",
+          quote: "\"비물질적인 가치를 소중히 여기며, 조용한 확신으로 조직의 중심을 잡습니다.\"",
+          tags: "(MBTI: INFP | Enneagram: 4w5 | Libra)"
+        },
+        talent: {
+          title: "보관된 재능",
+          tags: "#외유내강 #심미안 #데이터와_감성의_조화 #High_EQ"
+        }
+      },
       languages: {
         label: "언어",
         items: [
@@ -180,16 +213,20 @@ const translations: Record<Language, Content> = {
       },
       personality: {
         label: "성격",
-        mbti: "INFP 중재자",
-        enneagram: "4w5 보헤미안",
+        mbti: "INFP",
+        enneagram: "4w5",
         subtype: "SP 4 (자기보존)",
         zodiac: "천칭자리",
-        eq: "정서 지능 높음",
+        oe: "O80/E20",
+        scid: "SCID",
+        eq: "High EQ",
         details: {
-          mbti: { title: "MBTI:", content: "내면의 뜨거운 열정과 깊은 감수성으로 세상을 따뜻하게 바라보며 평화와 조화를 추구합니다." },
-          enneagram: { title: "애니어그램:", content: "자신만의 고유한 정체성을 중시하며, 세상을 예리하게 관찰하는 지적인 호기심을 지녔습니다." },
-          subtype: { title: "하위 유형: SP 4 (자기보존)", content: "깊은 감수성을 겉으로 과시하지 않고 조용히 품어내는 외유내강형입니다. 독립심이 강하며, 혼자만의 시간 속에서 감정을 단단하게 승화시킵니다." },
-          zodiac: { title: "별자리:", content: "관계의 조화와 균형을 중시하며, 일상 속에서도 특유의 세련된 미적 감각을 발휘합니다." },
+          mbti: { title: "MBTI: INFP 중재자:", content: "내면의 뜨거운 열정과 깊은 감수성으로 세상을 따뜻하게 바라보며 평화와 조화를 추구합니다." },
+          enneagram: { title: "애니어그램: 4w5 보헤미안:", content: "자신만의 고유한 정체성을 중시하며, 세상을 예리하게 관찰하는 지적인 호기심을 지녔습니다." },
+          subtype: { title: "하위 유형: SP 4 (자기보존):", content: "깊은 감수성을 겉으로 과시하지 않고 조용히 품어내는 외유내강형입니다. 독립심이 강하며, 혼자만의 시간 속에서 감정을 단단하게 승화시킵니다." },
+          zodiac: { title: "별자리: 천칭자리:", content: "관계의 조화와 균형을 중시하며, 일상 속에서도 특유의 세련된 미적 감각을 발휘합니다." },
+          oe: { title: "Big 5 (O80 / E20):", content: "높은 개방성으로 새로운 세계를 탐구하며, 혼자만의 시간에서 에너지를 채우는 탐험가." },
+          scid: { title: "DISC (SCID):", content: "신뢰를 바탕으로 한 정서적 안정감(S)과 논리적인 신중함(C)을 결합하여, 복잡한 상황 속에서도 흔들림 없이 견고하고 완벽한 질서를 구축합니다." },
           eq: { title: "정서 지능 높음 ⬆️:", content: "타인의 마음에 깊이 공감하고 배려하며, 섬세하고 유연하게 소통하는 따뜻함을 갖추고 있습니다." }
         }
       },
@@ -282,6 +319,18 @@ const translations: Record<Language, Content> = {
     aboutMe: {
       title: "ABOUT ME",
       personalityIdentityTitle: "Personality & Identity",
+      personalityIdentitySubtitle: "Archive of Silence",
+      archive: {
+        insightful: {
+          title: "Silent Insightful",
+          quote: "\"Valuing immaterial worth, holding the center of the organization with quiet conviction.\"",
+          tags: "(MBTI: INFP | Enneagram: 4w5 | Libra)"
+        },
+        talent: {
+          title: "Archived Talent",
+          tags: "#IronHandInAVelvetGlove #AestheticSense #HarmonyOfDataAndEmotion #High_EQ"
+        }
+      },
       languages: {
         label: "Languages",
         items: [
@@ -300,16 +349,20 @@ const translations: Record<Language, Content> = {
       },
       personality: {
         label: "Personality",
-        mbti: "INFP Mediator",
-        enneagram: "4w5 Bohemian",
+        mbti: "INFP",
+        enneagram: "4w5",
         subtype: "SP 4 (Self-Preservation)",
         zodiac: "Libra",
-        eq: "High Emotional Intelligence",
+        oe: "O80/E20",
+        scid: "SCID",
+        eq: "High EQ",
         details: {
-          mbti: { title: "MBTI:", content: "I view the world warmly with inner passion and deep sensitivity, pursuing peace and harmony." },
-          enneagram: { title: "Enneagram:", content: "I value my own unique identity and possess intellectual curiosity that keenly observes the world." },
-          subtype: { title: "Subtype: SP 4 (Self-Preservation)", content: "I am a strong-willed, gentle-on-the-outside, tough-on-the-inside type who quietly cherishes deep sensitivity. I am independent and solidify my emotions in solitude." },
-          zodiac: { title: "Zodiac:", content: "I value harmony and balance in relationships, and I naturally express a refined aesthetic sense in my daily life." },
+          mbti: { title: "MBTI: INFP Mediator:", content: "I view the world warmly with inner passion and deep sensitivity, pursuing peace and harmony." },
+          enneagram: { title: "Enneagram: 4w5 Bohemian:", content: "I value my own unique identity and possess intellectual curiosity that keenly observes the world." },
+          subtype: { title: "Subtype: SP 4 (Self-Preservation):", content: "I am a strong-willed, gentle-on-the-outside, tough-on-the-inside type who quietly cherishes deep sensitivity. I am independent and solidify my emotions in solitude." },
+          zodiac: { title: "Zodiac: Libra:", content: "I value harmony and balance in relationships, and I naturally express a refined aesthetic sense in my daily life." },
+          oe: { title: "Big 5 (O80 / E20):", content: "An explorer who explores new worlds with high openness and recharges energy in solitude." },
+          scid: { title: "DISC (SCID):", content: "Combining emotional stability based on trust (S) and logical prudence (C), I build a solid and perfect order without wavering even in complex situations." },
           eq: { title: "High Emotional Intelligence ⬆️:", content: "I have an excellent ability to sensitively perceive and handle the emotions of myself and others, and I possess a warmth that communicates delicately and flexibly." }
         }
       },
@@ -402,6 +455,18 @@ const translations: Record<Language, Content> = {
     aboutMe: {
       title: "ABOUT ME",
       personalityIdentityTitle: "性格 & アイデンティティ",
+      personalityIdentitySubtitle: "沈黙のアーカイブ",
+      archive: {
+        insightful: {
+          title: "静かな洞察者",
+          quote: "「非物質的な価値を大切にし、静かな確信で組織の中心を担います。」",
+          tags: "(MBTI: INFP | Enneagram: 4w5 | Libra)"
+        },
+        talent: {
+          title: "保管された才能",
+          tags: "#外柔内剛 #審美眼 #データと感性の調和 #High_EQ"
+        }
+      },
       languages: {
         label: "言語",
         items: [
@@ -420,16 +485,20 @@ const translations: Record<Language, Content> = {
       },
       personality: {
         label: "性格",
-        mbti: "INFP 仲介者",
-        enneagram: "4w5 ボヘミアン",
+        mbti: "INFP",
+        enneagram: "4w5",
         subtype: "SP 4 (自己保存)",
         zodiac: "天秤座",
-        eq: "高い感情知能",
+        oe: "O80/E20",
+        scid: "SCID",
+        eq: "High EQ",
         details: {
-          mbti: { title: "MBTI:", content: "内面の熱い情熱と深い感受性で世界を温かく見つめ、平和と調和を追求します。" },
-          enneagram: { title: "エニアグラム:", content: "自分だけの固有のアイデンティティを重視し、世界を鋭く観察する知的好奇心を持っています。" },
-          subtype: { title: "サブタイプ: SP 4 (自己保存)", content: "深い感受性を外に出さず、静かに内に秘める外柔内剛型です。独立心が強く、一人の時間の中で感情をしっかりと昇華させます。" },
-          zodiac: { title: "星座:", content: "関係における調和とバランスを重視し、日常生活の中でも特有の洗練された美的感覚を発휘します。" },
+          mbti: { title: "MBTI: INFP 仲介者:", content: "内面の熱い情熱と深い感受性で世界を温かく見つめ、平和と調和を追求します。" },
+          enneagram: { title: "エニアグラム: 4w5 ボヘミアン:", content: "自分だけの固有のアイデンティティを重視し、世界を鋭く観察する知的好奇心を持っています。" },
+          subtype: { title: "サブタイプ: SP 4 (自己保存):", content: "深い感受性を外に出さず、静かに内に秘める外柔内剛型です。独立心が強く、一人の時間の中で感情をしっかりと昇華させます。" },
+          zodiac: { title: "星座: 天秤座:", content: "関係における調和とバランスを重視し、日常生活の中でも特有の洗練された美的感覚を発휘します。" },
+          oe: { title: "Big 5 (O80 / E20):", content: "高い開放性で新しい世界を探求し、一人の時間でエネルギーを満たす探検家。" },
+          scid: { title: "DISC (SCID):", content: "信頼に基づく情緒的安定感(S)と論理的な慎重さ(C)を組み合わせ、複雑な状況の中でも揺らぐことなく堅固で完璧な秩序を構築します。" },
           eq: { title: "高い感情知能 ⬆️:", content: "自分と他人の感情を繊細に察して扱う能力に優れており、周囲の人の心深くまで共感し、柔らかく柔軟にコミュニケーションをとる温かさを持っています。" }
         }
       },
@@ -876,6 +945,31 @@ const App: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Insightful Card */}
+            <div className="bg-white/40 p-6 rounded-3xl border border-white/20 space-y-4 lg:col-span-2">
+              <h3 className="text-xl font-bold text-slate-400 tracking-widest uppercase flex items-center gap-2 text-engraved font-letter">
+                <Flame size={16} className="text-pastel-pink" /> {content.aboutMe.archive.insightful.title}
+              </h3>
+              <div className="space-y-3">
+                <p className="text-slate-600 font-medium italic text-sm leading-relaxed">{content.aboutMe.archive.insightful.quote}</p>
+                <p className="text-xs text-slate-500 font-medium">{content.aboutMe.archive.insightful.tags}</p>
+              </div>
+            </div>
+
+            {/* Talent Card */}
+            <div className="bg-white/40 p-6 rounded-3xl border border-white/20 space-y-4 lg:col-span-1">
+              <h3 className="text-xl font-bold text-slate-400 tracking-widest uppercase flex items-center gap-2 text-engraved font-letter">
+                <Star size={16} className="text-pastel-purple" /> {content.aboutMe.archive.talent.title}
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {content.aboutMe.archive.talent.tags.split(' ').map((tag, i) => (
+                  <span key={i} className="text-xs font-medium bg-white/60 border border-slate-100 px-3 py-1.5 rounded-full text-slate-600">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
             {/* Personality Card */}
             <div className="bg-white/40 p-6 rounded-3xl border border-white/20 space-y-4 lg:col-span-2">
               <h3 className="text-xl font-bold text-slate-400 tracking-widest uppercase flex items-center gap-2 text-engraved font-letter">
@@ -883,13 +977,25 @@ const App: React.FC = () => {
               </h3>
               <div className="space-y-3">
                 <div className="flex flex-wrap gap-2">
-                  <span className="bg-pastel-blue/30 px-3 py-1 rounded-lg text-sm text-slate-700">{content.aboutMe.personality.mbti}</span>
-                  <span className="bg-pastel-pink/30 px-3 py-1 rounded-lg text-sm text-slate-700">{content.aboutMe.personality.enneagram}</span>
-                  <span className="bg-pastel-green/30 px-3 py-1 rounded-lg text-sm text-slate-700 flex items-center gap-1">
-                    <Scale size={14} /> {content.aboutMe.personality.zodiac}
+                  <span className="bg-pastel-blue/30 px-3 py-1 rounded-lg text-sm text-slate-700 flex items-center gap-1.5">
+                    <Puzzle size={14} className="text-blue-500" /> {content.aboutMe.personality.mbti}
+                  </span>
+                  <span className="bg-pastel-pink/30 px-3 py-1 rounded-lg text-sm text-slate-700 flex items-center gap-1.5">
+                    <Star size={14} className="text-pink-500" /> {content.aboutMe.personality.enneagram}
+                  </span>
+                  <span className="bg-pastel-green/30 px-3 py-1 rounded-lg text-sm text-slate-700 flex items-center gap-1.5">
+                    <Scale size={14} className="text-emerald-500" /> {content.aboutMe.personality.zodiac}
+                  </span>
+                  <span className="bg-purple-100/50 px-3 py-1 rounded-lg text-sm text-slate-700 flex items-center gap-1.5">
+                    <Telescope size={14} className="text-purple-400" /> {content.aboutMe.personality.oe}
+                  </span>
+                  <span className="bg-orange-100/50 px-3 py-1 rounded-lg text-sm text-slate-700 flex items-center gap-1.5">
+                    <Anchor size={14} className="text-orange-400" /> {content.aboutMe.personality.scid}
+                  </span>
+                  <span className="bg-blue-100/50 px-3 py-1 rounded-lg text-sm text-slate-700 flex items-center gap-1.5">
+                    <Waves size={14} className="text-blue-400" /> {content.aboutMe.personality.eq}
                   </span>
                 </div>
-                <p className="text-slate-600 font-medium italic text-sm">{content.aboutMe.personality.eq}</p>
               </div>
               <button 
                 onClick={() => setShowPersonalityInfo(!showPersonalityInfo)}
@@ -908,18 +1014,18 @@ const App: React.FC = () => {
                     className="overflow-hidden"
                   >
                     <div className="bg-white/60 rounded-2xl p-4 mt-2 space-y-3 text-xs text-slate-600 leading-relaxed border border-white/20">
-                      <p><strong>{content.aboutMe.personality.details.mbti.title}</strong> {content.aboutMe.personality.mbti}</p>
-                      <p>{content.aboutMe.personality.details.mbti.content}</p>
+                      <p><strong><Puzzle size={14} className="inline text-blue-500 mr-1" />{content.aboutMe.personality.details.mbti.title}</strong> {content.aboutMe.personality.details.mbti.content}</p>
                       
-                      <p><strong><Sparkles size={14} className="inline" /> {content.aboutMe.personality.details.enneagram.title}</strong> {content.aboutMe.personality.enneagram}</p>
-                      <p>{content.aboutMe.personality.details.enneagram.content}</p>
-                      <p className="pl-4">↳ {content.aboutMe.personality.details.subtype.title}</p>
-                      <p className="pl-4">{content.aboutMe.personality.details.subtype.content}</p>
+                      <p><strong><Star size={14} className="inline text-pink-500 mr-1" />{content.aboutMe.personality.details.enneagram.title}</strong> {content.aboutMe.personality.details.enneagram.content}</p>
+                      <p className="pl-4">↳ <strong>{content.aboutMe.personality.details.subtype.title}</strong> {content.aboutMe.personality.details.subtype.content}</p>
                       
-                      <p><strong><Scale size={14} className="inline" /> {content.aboutMe.personality.details.zodiac.title}</strong> {content.aboutMe.personality.zodiac}</p>
-                      <p>{content.aboutMe.personality.details.zodiac.content}</p>
+                      <p><strong><Scale size={14} className="inline text-emerald-500 mr-1" />{content.aboutMe.personality.details.zodiac.title}</strong> {content.aboutMe.personality.details.zodiac.content}</p>
                       
-                      <p><strong>{content.aboutMe.personality.details.eq.title}</strong> {content.aboutMe.personality.details.eq.content}</p>
+                      <p><strong><Telescope size={14} className="inline text-purple-400 mr-1" />{content.aboutMe.personality.details.oe.title}</strong> {content.aboutMe.personality.details.oe.content}</p>
+                      
+                      <p><strong><Anchor size={14} className="inline text-orange-400 mr-1" />{content.aboutMe.personality.details.scid.title}</strong> {content.aboutMe.personality.details.scid.content}</p>
+                      
+                      <p><strong><Waves size={14} className="inline text-blue-400 mr-1" />{content.aboutMe.personality.details.eq.title}</strong> {content.aboutMe.personality.details.eq.content}</p>
                     </div>
                   </motion.div>
                 )}
@@ -1143,22 +1249,6 @@ const App: React.FC = () => {
               {content.aboutMe.worldview.footer}
             </p>
           </div>
-        </motion.section>
-
-        {/* Personality Section */}
-        <motion.section
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="glass rounded-dreamy p-8 sm:p-12 space-y-10"
-        >
-          <div className="flex items-center gap-4">
-            <div className="p-3 bg-pastel-green/30 rounded-2xl text-slate-700">
-              <BookOpen size={24} />
-            </div>
-            <h2 className="text-4xl font-bold tracking-tighter text-slate-800 text-engraved font-letter">성격</h2>
-          </div>
-          <PersonalityAccordion />
         </motion.section>
 
         {/* About Me Section - Part 4: Copyright */}
