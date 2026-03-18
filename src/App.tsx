@@ -747,7 +747,7 @@ const App: React.FC = () => {
                 {/* Track Info */}
                 <div className="text-center mb-8">
                   <h3 className="text-xl font-bold text-slate-800 mb-1">{content.aboutMe.playlist.trackTitle}</h3>
-                  <p className="text-pastel-purple font-semibold text-sm">{content.aboutMe.playlist.artist}</p>
+                  <p className="text-pastel-purple font-semibold text-sm"><span className="text-[#dfc5fa]">{content.aboutMe.playlist.artist}</span></p>
                 </div>
 
                 {/* Progress Bar */}
@@ -871,7 +871,7 @@ const App: React.FC = () => {
             {/* Dream Card */}
             <div className="bg-white/40 p-6 rounded-3xl border border-white/20 space-y-4">
               <h3 className="text-xl font-bold text-slate-400 tracking-widest uppercase flex items-center gap-2 text-engraved font-letter">
-                <Heart size={16} className="text-pastel-pink" /> {content.aboutMe.dream.label}
+                <Heart size={16} className="text-[#facad9]" /> {content.aboutMe.dream.label}
               </h3>
               <p className="text-slate-700 text-sm leading-relaxed">{content.aboutMe.dream.text}</p>
             </div>
@@ -879,7 +879,7 @@ const App: React.FC = () => {
             {/* Hobbies Card */}
             <div className="bg-white/40 p-6 rounded-3xl border border-white/20 space-y-4">
               <h3 className="text-xl font-bold text-slate-400 tracking-widest uppercase flex items-center gap-2 text-engraved font-letter">
-                <Gamepad2 size={16} className="text-pastel-purple" /> {content.aboutMe.hobbies.label}
+                <Gamepad2 size={16} className="text-[#facad9]" /> {content.aboutMe.hobbies.label}
               </h3>
               <p className="text-slate-700 text-xs leading-relaxed whitespace-pre-line">{content.aboutMe.hobbies.text}</p>
             </div>
@@ -887,16 +887,16 @@ const App: React.FC = () => {
             {/* Birthday Card */}
             <div className="bg-white/40 p-6 rounded-3xl border border-white/20 space-y-4">
               <h3 className="text-xl font-bold text-slate-400 tracking-widest uppercase flex items-center gap-2 text-engraved font-letter">
-                <Cake size={16} className="text-pastel-pink" /> {content.aboutMe.birthday.label}
+                <Cake size={16} className="text-[#facad9]" /> {content.aboutMe.birthday.label}
               </h3>
               <div className="space-y-3">
                 <p className="text-slate-700 font-medium">{content.aboutMe.birthday.text}</p>
                 
                 <button 
                   onClick={() => setShowBirthdayDetails(!showBirthdayDetails)}
-                  className="text-xs font-bold text-pastel-pink hover:text-slate-800 transition-colors flex items-center gap-1 group"
+                  className="text-xs font-bold text-[#dfc5fa] hover:text-slate-800 transition-colors flex items-center gap-1 group"
                 >
-                  {content.aboutMe.birthday.viewDetails}
+                  <span className="text-[#dfc5fa]">{content.aboutMe.birthday.viewDetails}</span>
                   <ChevronDown size={14} className={`transition-transform duration-300 ${showBirthdayDetails ? 'rotate-180' : ''}`} />
                 </button>
 
@@ -948,7 +948,7 @@ const App: React.FC = () => {
             {/* Insightful Card */}
             <div className="bg-white/40 p-6 rounded-3xl border border-white/20 space-y-4 lg:col-span-2">
               <h3 className="text-xl font-bold text-slate-400 tracking-widest uppercase flex items-center gap-2 text-engraved font-letter">
-                <Flame size={16} className="text-pastel-pink" /> {content.aboutMe.archive.insightful.title}
+                <Flame size={16} className="text-[#facad9]" /> {content.aboutMe.archive.insightful.title}
               </h3>
               <div className="space-y-3">
                 <p className="text-slate-600 font-medium italic text-sm leading-relaxed">{content.aboutMe.archive.insightful.quote}</p>
@@ -959,7 +959,7 @@ const App: React.FC = () => {
             {/* Talent Card */}
             <div className="bg-white/40 p-6 rounded-3xl border border-white/20 space-y-4 lg:col-span-1">
               <h3 className="text-xl font-bold text-slate-400 tracking-widest uppercase flex items-center gap-2 text-engraved font-letter">
-                <Star size={16} className="text-pastel-purple" /> {content.aboutMe.archive.talent.title}
+                <Star size={16} className="text-[#facad9]" /> {content.aboutMe.archive.talent.title}
               </h3>
               <div className="flex flex-wrap gap-2">
                 {content.aboutMe.archive.talent.tags.split(' ').map((tag, i) => (
@@ -1001,7 +1001,7 @@ const App: React.FC = () => {
                 onClick={() => setShowPersonalityInfo(!showPersonalityInfo)}
                 className="text-xs font-bold text-pastel-purple hover:text-slate-800 transition-colors flex items-center gap-1 group"
               >
-                {lang === 'KR' ? '자세히 보기' : lang === 'EN' ? 'Learn more' : '詳細を見る'}
+                {lang === 'KR' ? <span className="text-[#dfc5fa]">자세히 보기</span> : lang === 'EN' ? <span className="text-[#dfc5fa]">Learn more</span> : <span className="text-[#dfc5fa]">詳細を見る</span>}
                 <ChevronRight size={14} className={`transition-transform duration-300 ${showPersonalityInfo ? 'rotate-90' : ''}`} />
               </button>
               
@@ -1035,7 +1035,7 @@ const App: React.FC = () => {
             {/* Identity Card */}
             <div className="bg-white/40 p-6 rounded-3xl border border-white/20 space-y-4 lg:col-span-2">
               <h3 className="text-xl font-bold text-slate-400 tracking-widest uppercase flex items-center gap-2 text-engraved font-letter">
-                <Info size={16} className="text-pastel-purple" /> {content.aboutMe.identity.label}
+                <Info size={16} className="text-[#facad9]" /> {content.aboutMe.identity.label}
               </h3>
               <div className="flex flex-wrap gap-2">
                 {content.aboutMe.identity.tags.map((tag, i) => (
@@ -1048,7 +1048,7 @@ const App: React.FC = () => {
                 onClick={() => setShowIdentityInfo(!showIdentityInfo)}
                 className="text-xs font-bold text-pastel-purple hover:text-slate-800 transition-colors flex items-center gap-1 group"
               >
-                {lang === 'KR' ? '자세히 보기' : lang === 'EN' ? 'Learn more' : '詳細を見る'}
+                {lang === 'KR' ? <span className="text-[#dfc5fa]">자세히 보기</span> : lang === 'EN' ? <span className="text-[#dfc5fa]">Learn more</span> : <span className="text-[#dfc5fa]">詳細を見る</span>}
                 <ChevronRight size={14} className={`transition-transform duration-300 ${showIdentityInfo ? 'rotate-90' : ''}`} />
               </button>
               
@@ -1182,7 +1182,7 @@ const App: React.FC = () => {
                     <span className="absolute -bottom-1 left-0 w-full h-2 bg-pastel-pink/30 -z-10 rounded-full"></span>
                   </span>
                 </h3>
-                <p className="text-pastel-purple font-semibold">({content.aboutMe.mascot.species})</p>
+                <p className="text-pastel-purple font-semibold">(<span className="text-[#dfc5fa]">{content.aboutMe.mascot.species}</span>)</p>
               </div>
             </div>
             <p className="text-slate-700 leading-relaxed whitespace-pre-line">
@@ -1238,7 +1238,7 @@ const App: React.FC = () => {
               <div className="space-y-4">
                 {content.aboutMe.worldview.dimensions.map((dim, i) => (
                   <div key={i} className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 p-4 bg-white/30 rounded-2xl border border-white/20">
-                    <span className="text-xs font-bold text-pastel-purple min-w-[120px]">{dim.category}</span>
+                    <span className={`text-xs font-bold ${['초월과 질서', '운명과 시간', '환상과 미지'].includes(dim.category) ? 'text-[#dfc5fa]' : 'text-pastel-purple'} min-w-[120px]`}>{dim.category}</span>
                     <span className="text-sm text-slate-700">{dim.items}</span>
                   </div>
                 ))}
