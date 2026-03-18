@@ -786,7 +786,7 @@ const App: React.FC = () => {
                     </button>
                     <button 
                       onClick={togglePlay}
-                      className="w-14 h-14 bg-gradient-to-tr from-pastel-purple to-pastel-pink rounded-full flex items-center justify-center text-white shadow-lg hover:scale-105 transition-all"
+                      className="w-14 h-14 bg-gradient-to-tr from-[#a5c6fa] to-pastel-purple rounded-full flex items-center justify-center text-white shadow-lg hover:scale-105 transition-all"
                     >
                       {isPlaying ? (
                         <div className="flex gap-1">
@@ -973,7 +973,7 @@ const App: React.FC = () => {
             {/* Personality Card */}
             <div className="bg-white/40 p-6 rounded-3xl border border-white/20 space-y-4 lg:col-span-2">
               <h3 className="text-xl font-bold text-slate-400 tracking-widest uppercase flex items-center gap-2 text-engraved font-letter">
-                <Brush size={16} className="text-pastel-purple" /> {content.aboutMe.personality.label}
+                <Brush size={16} className="text-[#facad9]" /> {content.aboutMe.personality.label}
               </h3>
               <div className="space-y-3">
                 <div className="flex flex-wrap gap-2">
