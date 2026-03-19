@@ -68,7 +68,7 @@ const MEDIA_LINKS = {
   mascotImage: "/solnyang.png",
   
   // 3. 'PLAYLIST' 음악/동영상 링크 (YouTube, SoundCloud, 직접 파일(mp3 등) 링크 지원)
-  playlistAudio: "https://www.youtube.com/watch?v=ZBIg90S5vaI"
+  playlistAudio: "/bgm.mp3"
 };
 
 interface Content {
@@ -750,14 +750,6 @@ const App: React.FC = () => {
                     volume={volume}
                     onProgress={(state: any) => handleProgress(state)}
                     onReady={(player: any) => setDuration(player.getDuration())}
-                    config={{
-                      file: {
-                        forceAudio: true,
-                        attributes: {
-                          controlsList: 'nodownload'
-                        }
-                      }
-                    }}
                   />
                 </div>
 
