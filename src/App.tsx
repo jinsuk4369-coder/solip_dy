@@ -62,13 +62,13 @@ type Language = 'KR' | 'EN' | 'JP';
 // ==========================================
 const MEDIA_LINKS = {
   // 1. 'Solip dy' 위쪽 메인 그림 링크
-  mainImage: "https://drive.google.com/uc?export=view&id=1ODs0AacV01CATtuObJKx_f5WAnFiYD4k",
+  mainImage: "main.png",
   
   // 2. 'mascot' 카드의 아랫쪽 그림 링크
-  mascotImage: "https://drive.google.com/uc?export=view&id=1KaqPEAMrZzq-KaoRAfIa4hwgFe_zAf16",
+  mascotImage: "solnyang.png",
   
   // 3. 'PLAYLIST' 음악/동영상 링크 (YouTube, SoundCloud, 직접 파일(mp3 등) 링크 지원)
-  playlistAudio: "https://drive.google.com/uc?export=view&id=1KAdIFaS3ORuURp0vr1tszZc6Zf23YlD-"
+  playlistAudio: "https://www.youtube.com/watch?v=ZBIg90S5vaI&list=PLPli1pZAZucQEGuqipil55HK82QGtXdr7&index=4"
 };
 
 interface Content {
