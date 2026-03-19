@@ -748,6 +748,8 @@ const App: React.FC = () => {
                 playing={isPlaying}
                 loop={isLooping}
                 volume={volume}
+                muted={false}
+                playsinline
                 width="10px"  /* 브라우저를 속이기 위한 최소 크기 */
                 height="10px"
                 onProgress={(state: any) => handleProgress(state)}
