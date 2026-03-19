@@ -68,7 +68,7 @@ const MEDIA_LINKS = {
   mascotImage: "https://drive.google.com/uc?export=view&id=1KaqPEAMrZzq-KaoRAfIa4hwgFe_zAf16",
   
   // 3. 'PLAYLIST' 음악/동영상 링크 (YouTube, SoundCloud, 직접 파일(mp3 등) 링크 지원)
-  playlistAudio: "https://drive.google.com/uc?export=download&id=1KAdIFaS3ORuURp0vr1tszZc6Zf23YlD-"
+  playlistAudio: "https://drive.google.com/uc?export=view&id=1KAdIFaS3ORuURp0vr1tszZc6Zf23YlD-"
 };
 
 interface Content {
