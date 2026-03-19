@@ -68,7 +68,7 @@ const MEDIA_LINKS = {
   mascotImage: "https://github.com/jinsuk4369-coder/solip_dy/blob/main/src/solnyang.png?raw=true",
   
   // 3. 'PLAYLIST' 음악/동영상 링크 (YouTube, SoundCloud, 직접 파일(mp3 등) 링크 지원)
-  playlistAudio: "src/bgm.mp3"
+  playlistAudio: "/solip_dy/bgm.mp3"
 };
 
 interface Content {
