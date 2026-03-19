@@ -43,6 +43,8 @@ import {
   SkipBack,
   SkipForward,
   Repeat,
+  Volume2,
+  VolumeX,
   Cat,
   Flame,
   Star,
@@ -53,6 +55,21 @@ import {
 } from 'lucide-react';
 
 type Language = 'KR' | 'EN' | 'JP';
+
+// ==========================================
+// 🔗 미디어 링크 설정 (Media Links Configuration)
+// 이곳에 직접 링크(Direct Link)를 넣어주세요!
+// ==========================================
+const MEDIA_LINKS = {
+  // 1. 'Solip dy' 위쪽 메인 그림 링크
+  mainImage: "https://drive.google.com/uc?export=view&id=1ODs0AacV01CATtuObJKx_f5WAnFiYD4k",
+  
+  // 2. 'mascot' 카드의 아랫쪽 그림 링크
+  mascotImage: "https://drive.google.com/uc?export=view&id=1KaqPEAMrZzq-KaoRAfIa4hwgFe_zAf16",
+  
+  // 3. 'PLAYLIST' 음악/동영상 링크 (YouTube, SoundCloud, 직접 파일(mp3 등) 링크 지원)
+  playlistAudio: "https://drive.google.com/uc?export=download&id=1KAdIFaS3ORuURp0vr1tszZc6Zf23YlD-"
+};
 
 interface Content {
   hero: string;
@@ -596,6 +613,8 @@ const App: React.FC = () => {
   const [played, setPlayed] = useState(0);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
+  const [isLooping, setIsLooping] = useState(false);
+  const [volume, setVolume] = useState(0.5);
   const playerRef = useRef<any>(null);
 
   const togglePlay = () => setIsPlaying(!isPlaying);
@@ -650,7 +669,7 @@ const App: React.FC = () => {
             <div className="relative w-48 h-48 sm:w-64 sm:h-64 mb-4">
               <div className="absolute inset-0 bg-pastel-purple/20 rounded-full blur-3xl animate-pulse" />
               <img 
-                src="https://drive.google.com/uc?export=view&id=1ODs0AacV01CATtuObJKx_f5WAnFiYD4k" 
+                src={MEDIA_LINKS.mainImage}
                 alt="Solip dy Mascot"
                 className="w-full h-full object-contain relative z-10 drop-shadow-2xl"
                 referrerPolicy="no-referrer"
@@ -698,12 +717,37 @@ const App: React.FC = () => {
             </div>
             <div className="flex justify-center">
               <div className="w-full max-w-sm bg-white/40 backdrop-blur-md rounded-[3rem] p-8 border border-white/30 shadow-xl relative overflow-hidden">
+                {/* Volume Control (Top Left) */}
+                <div className="absolute top-8 left-8 z-20">
+                  <div className="relative group flex items-center">
+                    <button 
+                      className="text-slate-400 hover:text-slate-600 transition-colors"
+                      onClick={() => setVolume(volume === 0 ? 0.5 : 0)}
+                    >
+                      {volume === 0 ? <VolumeX size={20} /> : <Volume2 size={20} />}
+                    </button>
+                    <div className="absolute left-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-20 bg-white/80 backdrop-blur-sm rounded-full px-2 py-1 flex items-center shadow-sm border border-white/40 z-10 ml-2">
+                      <input 
+                        type="range" 
+                        min={0} 
+                        max={1} 
+                        step="any" 
+                        value={volume} 
+                        onChange={(e) => setVolume(parseFloat(e.target.value))}
+                        className="w-full h-1 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-pastel-purple"
+                      />
+                    </div>
+                  </div>
+                </div>
+
                 {/* Hidden Player */}
                 <div className="hidden">
                   <Player
                     ref={playerRef}
-                    url="https://drive.google.com/uc?export=download&id=1KAdIFaS3ORuURp0vr1tszZc6Zf23YlD-"
+                    url={MEDIA_LINKS.playlistAudio}
                     playing={isPlaying}
+                    loop={isLooping}
+                    volume={volume}
                     onProgress={(state: any) => handleProgress(state)}
                     onReady={(player: any) => setDuration(player.getDuration())}
                     config={{
@@ -773,11 +817,14 @@ const App: React.FC = () => {
                 </div>
 
                 {/* Controls */}
-                <div className="flex items-center justify-between mb-8">
-                  <button className="text-pastel-pink hover:scale-110 transition-transform">
-                    <Heart size={20} fill="currentColor" />
-                  </button>
-                  <div className="flex items-center gap-6">
+                <div className="flex items-center justify-between mb-8 relative">
+                  <div className="flex items-center gap-3 w-16">
+                    <button className="text-pastel-pink hover:scale-110 transition-transform">
+                      <Heart size={20} fill="currentColor" />
+                    </button>
+                  </div>
+                  
+                  <div className="flex items-center gap-6 justify-center">
                     <button 
                       className="text-slate-600 hover:text-slate-800 transition-colors"
                       onClick={() => playerRef.current?.seekTo(0)}
@@ -804,9 +851,15 @@ const App: React.FC = () => {
                       <SkipForward size={24} fill="currentColor" />
                     </button>
                   </div>
-                  <button className="text-slate-400 hover:text-slate-600 transition-colors">
-                    <Repeat size={20} />
-                  </button>
+
+                  <div className="flex items-center justify-end w-16">
+                    <button 
+                      className={`transition-colors ${isLooping ? 'text-pastel-purple' : 'text-slate-400 hover:text-slate-600'}`}
+                      onClick={() => setIsLooping(!isLooping)}
+                    >
+                      <Repeat size={20} />
+                    </button>
+                  </div>
                 </div>
 
                 {/* YouTube Link */}
@@ -1167,7 +1220,7 @@ const App: React.FC = () => {
             <div className="flex flex-col md:flex-row gap-8 items-center">
               <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-md relative">
                 <img 
-                  src="https://drive.google.com/uc?export=view&id=1KaqPEAMrZzq-KaoRAfIa4hwgFe_zAf16" 
+                  src={MEDIA_LINKS.mascotImage}
                   alt="Mascot" 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
@@ -1320,7 +1373,7 @@ const App: React.FC = () => {
           Published: 2021. 01. 17
         </p>
         <p className="text-xs text-slate-400 font-light tracking-widest opacity-60">
-          Last Updated: 2026. 03. 18
+          Last Updated: 2026. 03. 19
         </p>
         <div className="flex justify-center gap-2 mt-4">
           <div className="w-2 h-2 rounded-full bg-pastel-pink" />
