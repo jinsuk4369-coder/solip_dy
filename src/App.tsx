@@ -62,13 +62,13 @@ type Language = 'KR' | 'EN' | 'JP';
 // ==========================================
 const MEDIA_LINKS = {
   // 1. 'Solip dy' 위쪽 메인 그림 링크
-  mainImage: "https://github.com/jinsuk4369-coder/solip_dy/blob/main/src/main.png?raw=true",
+  mainImage: "/main.png",
   
   // 2. 'mascot' 카드의 아랫쪽 그림 링크
-  mascotImage: "https://github.com/jinsuk4369-coder/solip_dy/blob/main/src/solnyang.png?raw=true",
+  mascotImage: "/solnyang.png",
   
   // 3. 'PLAYLIST' 음악/동영상 링크 (YouTube, SoundCloud, 직접 파일(mp3 등) 링크 지원)
-  playlistAudio: "/solip_dy/bgm.mp3"
+  playlistAudio: "/bgm.mp3"
 };
 
 interface Content {
