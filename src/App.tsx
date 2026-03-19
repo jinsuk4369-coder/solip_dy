@@ -68,7 +68,7 @@ const MEDIA_LINKS = {
   mascotImage: "/solnyang.png",
   
   // 3. 'PLAYLIST' 음악/동영상 링크 (YouTube, SoundCloud, 직접 파일(mp3 등) 링크 지원)
-  playlistAudio: "/bgm.mp3"
+  playlistAudio: "https://youtu.be/ZBIg90S5vaI?si=FlwqDu_tUz4FpScZ"
 };
 
 interface Content {
