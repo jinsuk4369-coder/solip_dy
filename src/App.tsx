@@ -740,21 +740,20 @@ const App: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Hidden Player */}
               {/* Hidden Player (브라우저가 눈치채지 못하게 투명망토 씌우기) */}
-<div className="absolute w-0 h-0 opacity-0 overflow-hidden pointer-events-none">
-  <Player
-    ref={playerRef}
-    url={MEDIA_LINKS.playlistAudio}
-    playing={isPlaying}
-    loop={isLooping}
-    volume={volume}
-    width="10px"  /* 브라우저를 속이기 위한 최소 크기 */
-    height="10px"
-    onProgress={(state: any) => handleProgress(state)}
-    onReady={(player: any) => setDuration(player.getDuration())}
-  />
-</div>
+              <div className="absolute w-0 h-0 opacity-0 overflow-hidden pointer-events-none">
+              <Player
+                ref={playerRef}
+                url={MEDIA_LINKS.playlistAudio}
+                playing={isPlaying}
+                loop={isLooping}
+                volume={volume}
+                width="10px"  /* 브라우저를 속이기 위한 최소 크기 */
+                height="10px"
+                onProgress={(state: any) => handleProgress(state)}
+                onReady={(player: any) => setDuration(player.getDuration())}
+                 />
+                 </div>
                 {/* Decorative Sparkles */}
                 <div className="absolute top-10 left-10 text-pastel-purple animate-pulse">✦</div>
                 <div className="absolute top-20 right-12 text-pastel-pink animate-pulse delay-75">✧</div>
